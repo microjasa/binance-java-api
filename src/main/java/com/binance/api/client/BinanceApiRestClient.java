@@ -12,7 +12,9 @@ import com.binance.api.client.domain.market.OrderBook;
 import com.binance.api.client.domain.market.TickerPrice;
 import com.binance.api.client.domain.market.TickerStatistics;
 
+import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Binance API facade, supporting synchronous/blocking access Binance's REST API.
@@ -278,6 +280,12 @@ public interface BinanceApiRestClient {
    * @param asset the list of assets to convert
    */
   DustTransferResponse dustTranfer(List<String> asset);
+
+  /**
+   * https://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data
+   * @return gnarly list of maps of lists of maps of lists...
+   */
+  List coinsAvail();
 
   /**
    * Fetch account deposit history.

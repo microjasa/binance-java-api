@@ -10,7 +10,9 @@ import com.binance.api.client.domain.general.ExchangeInfo;
 import com.binance.api.client.domain.market.*;
 import retrofit2.Call;
 
+import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import static com.binance.api.client.impl.BinanceApiServiceGenerator.createService;
 import static com.binance.api.client.impl.BinanceApiServiceGenerator.executeSync;
@@ -237,6 +239,10 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
 	@Override
 	public DustTransferResponse dustTranfer(List<String> asset) {
 		return executeSync(binanceApiService.dustTransfer(asset, BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis()));
+	}
+@Override
+	public List   coinsAvail(){
+				return executeSync(binanceApiService.coinsAvail(  BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis()));
 	}
 
 	@Override

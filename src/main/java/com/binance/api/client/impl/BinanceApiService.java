@@ -174,6 +174,13 @@ public interface BinanceApiService {
     Call<DustTransferResponse> dustTransfer(@Query("asset") List<String> asset, @Query("recvWindow") Long recvWindow, @Query("timestamp") Long timestamp);
 
     @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
+    @GET("/sapi/v1/capital/config/getall")
+    Call<List> coinsAvail(
+            @Query("recvWindow") Long recvWindow,
+            @Query("timestamp") Long timestamp);
+
+
+    @Headers(BinanceApiConstants.ENDPOINT_SECURITY_TYPE_SIGNED_HEADER)
     @GET("/sapi/v1/sub-account/transfer/subUserHistory")
     Call<List<SubAccountTransfer>> getSubAccountTransfers(@Query("timestamp") Long timestamp);
 
