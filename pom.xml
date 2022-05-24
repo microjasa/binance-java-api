@@ -16,15 +16,15 @@
 
   <properties>
     <com.squareup.retrofit2.version>2.4.0</com.squareup.retrofit2.version>
-      <kotlin.version>1.6.0-M1</kotlin.version>
+      <kotlin.version>1.6.21</kotlin.version>
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>com.squareup.retrofit2</groupId>
-      <artifactId>retrofit</artifactId>
-      <version>${com.squareup.retrofit2.version}</version>
-    </dependency>
+      <dependency>
+          <groupId>com.squareup.okio</groupId>
+          <artifactId>okio</artifactId>
+          <version>1.14.0</version>
+      </dependency>
     <dependency>
       <groupId>com.squareup.retrofit2</groupId>
       <artifactId>converter-jackson</artifactId>
