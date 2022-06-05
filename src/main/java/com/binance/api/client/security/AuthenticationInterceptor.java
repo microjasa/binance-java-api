@@ -4,9 +4,7 @@ import com.binance.api.client.constant.BinanceApiConstants;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
-import okio.Buffer;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
@@ -56,25 +54,25 @@ public class AuthenticationInterceptor implements Interceptor {
         return chain.proceed(newRequest);
     }
 
-    /**
-     * Extracts the request body into a String.
-     *
-     * @return request body as a string
-     */
-    @SuppressWarnings("unused")
-    private static String bodyToString(RequestBody request) {
-        try (final Buffer buffer = new Buffer()) {
-            final RequestBody copy = request;
-            if (copy != null) {
-                copy.writeTo(buffer);
-            } else {
-                return "";
-            }
-            return buffer.readUtf8();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+//    /**
+//     * Extracts the request body into a String.
+//     *
+//     * @return request body as a string
+//     */
+//    @SuppressWarnings("unused")
+//    private static String bodyToString(RequestBody request) {
+//        try (final Buffer buffer = new Buffer()) {
+//            final RequestBody copy = request;
+//            if (copy != null) {
+//                copy.writeTo(buffer);
+//            } else {
+//                return "";
+//            }
+//            return buffer.readUtf8();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
     @Override
     public boolean equals(final Object o) {
